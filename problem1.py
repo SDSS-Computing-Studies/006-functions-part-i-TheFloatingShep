@@ -9,14 +9,11 @@ Return the missing side
 """
 import math
 def hypotenuse(x,y,z):
-    if z == True:
+    if z == False:
         return math.sqrt((x**2) + (y**2))
     else:
         if x >= y:
-            X = x
-            Y = y
+            return math.sqrt((x**2) - (y**2))
         else:
-            X = y
-            Y = x
-        return (str(math.sqrt((X**2) - (Y**2)))).strip()
-print(hypotenuse(13,5,True))
+            return math.sqrt((y**2) - (x**2))
+print(hypotenuse(3,4,False))
