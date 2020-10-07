@@ -6,7 +6,7 @@ Return True if the number is an integer
 Return False if the number is not an integer
 (2 points)
 """
-def inInteger(n):
+def isInteger(n):
     if n % 1 == 0:
         return True
     else:
