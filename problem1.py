@@ -18,5 +18,5 @@ def hypotenuse(x,y,z):
         else:
             X = y
             Y = x
-        return str(math.sqrt((X**2) - (Y**2)))
+        return (str(math.sqrt((X**2) - (Y**2)))).strip()
 print(hypotenuse(13,5,True))
