@@ -9,7 +9,7 @@ Return the missing side
 """
 import math
 def hypotenuse(x,y,z):
-    if z == False:
+    if z == True:
         return math.sqrt((x**2) + (y**2))
     else:
         if x >= y:
