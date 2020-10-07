@@ -35,6 +35,12 @@ output is: "The solutions are x=?? and x=??"
 """
 
 def numSolutions(a,b,c):
+    if ((b**2) - (4 * a * c)) > 0:
+        return 2
+    elif ((b**2) - (4 * a * c)) == 1:
+        return 1
+    else:
+        return 0
     # inputs:
     # float a
     # float b
@@ -44,6 +50,7 @@ def numSolutions(a,b,c):
     # return 0, 1 or 2
 
 def solutions(a,b,c):
+    print("hi")
     #inputs:
     # float a
     # float b
@@ -52,16 +59,18 @@ def solutions(a,b,c):
     #
     # return tuple of float solution1 and float solution2
 
-def title():
+def title(sols):
+    if sols == 0:
+        return "There are no real solutions"
     # inputs none
     # return str of All the title and instructions on one line
 
-
 def main():
+    a = float(input("A: "))
+    b = float(input("B: "))
+    c = float(input("C: "))
     # Display Title and Instructions
-    print( title() )
+    print(title(numSolutions(a,b,c)))
     # Your code and function calls should go here
-
-
 
 main()
