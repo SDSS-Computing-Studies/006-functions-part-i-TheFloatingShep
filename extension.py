@@ -29,15 +29,14 @@ output is: "There are no real solutions"
 
 If there is one solution:
 output is "There is 1 solution, x=??"
-
 If there are two solutions:
 output is: "The solutions are x=?? and x=??"
 """
-
+import math
 def numSolutions(a,b,c):
     if ((b**2) - (4 * a * c)) > 0:
         return 2
-    elif ((b**2) - (4 * a * c)) == 1:
+    elif ((b**2) - (4 * a * c)) == 0:
         return 1
     else:
         return 0
@@ -50,7 +49,12 @@ def numSolutions(a,b,c):
     # return 0, 1 or 2
 
 def solutions(a,b,c):
-    print("hi")
+    if (numSolutions(a,b,c)) == 1:
+        solution1 = (-b + math.sqrt(b**2 - (4 * a * c))) / (2 * a)
+        return solution1
+    elif (numSolutions(a,b,c)) == 2:
+        solution2 = (((-b + math.sqrt(b**2 - (4 * a * c))) / (2 * a)),((-b - math.sqrt(b**2 - (4 * a * c))) / (2 * a)))
+        return solution2
     #inputs:
     # float a
     # float b
@@ -59,9 +63,13 @@ def solutions(a,b,c):
     #
     # return tuple of float solution1 and float solution2
 
-def title(sols):
+def title(sols,a,b,c):
     if sols == 0:
         return "There are no real solutions"
+    elif sols == 1:
+        return ("There is 1 solution, x=" + str(solutions(a,b,c)))
+    else:
+        return ("The solutions are x=" + str(solutions(a,b,c)[0]) + " and x=" + str(solutions(a,b,c)[1]))
     # inputs none
     # return str of All the title and instructions on one line
 
@@ -70,7 +78,7 @@ def main():
     b = float(input("B: "))
     c = float(input("C: "))
     # Display Title and Instructions
-    print(title(numSolutions(a,b,c)))
+    print(title(numSolutions(a,b,c),a,b,c))
     # Your code and function calls should go here
 
 main()
